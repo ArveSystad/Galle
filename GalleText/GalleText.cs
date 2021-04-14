@@ -22,7 +22,7 @@ namespace GalleText
             if (rawText == null)
                 return new OkObjectResult(null);
 
-            var enumerable = rawText.Select(x => x == ' ' ? "   " : $":alphabet-white-{x}:");
+            var enumerable = rawText.Select(x => x == ' ' ? "      " : $":alphabet-white-{x}:");
             var newstring = string.Join(null, enumerable);
 
             return new JsonResult(new {
