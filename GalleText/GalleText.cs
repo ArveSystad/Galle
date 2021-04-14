@@ -15,7 +15,7 @@ namespace GalleText
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            var rawText = req.Query["text"].FirstOrDefault();
+            var rawText = req.Form["text"].FirstOrDefault();
 
             log.LogInformation($"Gallifying text {rawText}");
 
