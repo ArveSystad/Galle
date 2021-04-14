@@ -22,8 +22,8 @@ namespace GalleText
             if (rawText == null)
                 return new OkObjectResult(null);
 
-            var enumerable = rawText.Select(x => x == ' ' ? "      " : $":alphabet-white-{x}:");
-            var newstring = string.Join(null, enumerable);
+            var characters = rawText.Select(x => x == ' ' ? "      " : $":alphabet-white-{x}:");
+            var newstring = string.Join(null, characters).ToLower();
 
             return new JsonResult(new {
                 response_type = "in_channel",
